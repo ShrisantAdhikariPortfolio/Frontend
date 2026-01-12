@@ -1,26 +1,164 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ================================
+   Tailwind Custom Variants
+================================ */
+@custom-variant dark (&:where([data-theme~="dark"], [data-theme~="dark"] *));
+@custom-variant light (&:where([data-theme~="light"], [data-theme~="light"] *));
 
+/* ================================
+   Tailwind Theme Tokens
+================================ */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-destructive: var(--destructive);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ================================
+   Theme Definitions
+================================ */
+@layer theme {
+
+  /* -------- Light Theme -------- */
+  :root,
+  [data-theme="light"] {
+    --radius: 0.625rem;
+
+    --background: oklch(99% 0 0);
+    --foreground: oklch(14.5% 0 0);
+
+    --primary: #fbb919;
+    --primary-foreground: #000000;
+
+    --secondary: oklch(97% 0 0);
+    --secondary-foreground: oklch(20.5% 0 0);
+
+    --accent: #3b82f6;
+    --accent-foreground: #ffffff;
+
+    --muted: oklch(96% 0 0);
+    --muted-foreground: oklch(55% 0 0);
+
+    --destructive: oklch(57.7% 0.245 27.325);
+
+    --border: oklch(92% 0 0);
+    --input: oklch(92% 0 0);
+    --ring: oklch(70.8% 0 0);
+
+    --card: oklch(99.5% 0 0);
+    --card-foreground: oklch(14.5% 0 0);
+
+    --popover: oklch(99% 0 0);
+    --popover-foreground: oklch(14.5% 0 0);
+  }
+
+  /* -------- Dark Theme -------- */
+  [data-theme="dark"] {
+    --background: oklch(14.5% 0 0);
+    --foreground: oklch(98.5% 0 0);
+
+    --primary: #fbb919;
+    --primary-foreground: #000000;
+
+    --secondary: oklch(26.9% 0 0);
+    --secondary-foreground: oklch(98.5% 0 0);
+
+    --accent: #60a5fa;
+    --accent-foreground: #000000;
+
+    --muted: oklch(26.9% 0 0);
+    --muted-foreground: oklch(70.8% 0 0);
+
+    --destructive: oklch(70.4% 0.191 22.216);
+
+    --border: oklch(100% 0 0 / 12%);
+    --input: oklch(100% 0 0 / 15%);
+    --ring: oklch(55.6% 0 0);
+
+    --card: oklch(20.5% 0 0);
+    --card-foreground: oklch(98.5% 0 0);
+
+    --popover: oklch(20.5% 0 0);
+    --popover-foreground: oklch(98.5% 0 0);
+  }
+
+  /* ---- High Contrast Theme ---- */
+  [data-theme="high-contrast"] {
+    --background: #ffffff;
+    --foreground: #000000;
+
+    --primary: #000000;
+    --primary-foreground: #ffffff;
+
+    --secondary: #f0f0f0;
+    --secondary-foreground: #000000;
+
+    --accent: #000000;
+    --accent-foreground: #ffffff;
+
+    --muted: #e5e5e5;
+    --muted-foreground: #000000;
+
+    --destructive: #000000;
+
+    --border: #000000;
+    --input: #000000;
+    --ring: #000000;
+
+    --card: #ffffff;
+    --card-foreground: #000000;
+
+    --popover: #ffffff;
+    --popover-foreground: #000000;
+
+    border-width: 2px !important;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ================================
+   Animations (Optional)
+================================ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.9s ease-out forwards;
 }

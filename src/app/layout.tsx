@@ -2,12 +2,13 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import Sidebar from '@/components/layout/Sidebar';
+import { ThemeProvider } from '@/components/theme-provider';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Shrisant Adhikari',
-  description: 'Personal portfolio website',
+  description: 'Full Stack Developer',
 };
 
 export default function RootLayout({
@@ -18,10 +19,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
-        <div className="flex">
-          <Sidebar />
-          <main className="ml-64 w-full">{children}</main>
-        </div>
+        <ThemeProvider
+          attribute="data-theme"
+          defaultTheme="dark"
+          themes={['light', 'dark']}
+          enableSystem={false}
+        >
+          <div className="flex">
+            <Sidebar />
+            <main className="ml-64 w-full">{children}</main>
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );
