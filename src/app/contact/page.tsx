@@ -12,7 +12,7 @@ export default function Contact() {
           </h2>
           <p className="text-gray-600 dark:text-gray-400 text-lg md:text-xl max-w-2xl mx-auto">
             Got an idea? A project? Or just want to say hi?  
-            I'm listening — drop me a message ✨
+            I'm listening — drop me a message 
           </p>
         </div>
 
