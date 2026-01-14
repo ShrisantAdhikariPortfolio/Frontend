@@ -81,7 +81,7 @@ export default function Experience() {
                                 className={`relative opacity-0 translate-y-12 transition-all duration-700 ease-out
                            ${index % 2 === 0 ? 'md:ml-auto md:pl-12 md:pr-24' : 'md:mr-auto md:pr-12 md:pl-24'}`}
                             >
-                                <div className="bg-slate-900/50 backdrop-blur-xl border border-slate-700/60 rounded-2xl p-8 md:p-10
+                                <div className="bg-slate-900/50 backdrop-blur-xl border border-slate-700/60 p-8 md:p-10
                                 hover:border-purple-500/40
                                 transition-all duration-500 group relative overflow-hidden">
 

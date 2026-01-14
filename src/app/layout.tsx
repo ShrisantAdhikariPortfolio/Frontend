@@ -25,7 +25,7 @@ export default function RootLayout({
           themes={['light', 'dark']}
           enableSystem={false}
         >
-          <div className="flex">
+          <div className="flex md:flex-row flex-col">
             <Sidebar />
             <main className="ml-64 w-full">{children}</main>
           </div>

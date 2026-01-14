@@ -78,7 +78,7 @@ export default function Contact() {
               <div className="
                 absolute bottom-0 left-0 h-full 
                 w-0 origin-left
-                bg-gradient-to-r from-purple-500 via-fuchsia-500 to-transparent
+                bg-gradient-to-r from-green-200 to-green-400
                 group-hover:w-1/2
                 transition-all duration-700 ease-out
               "/>
@@ -86,7 +86,7 @@ export default function Contact() {
               <div className="
                 absolute bottom-0 right-0 h-full 
                 w-0 origin-right
-                bg-gradient-to-r from-transparent via-fuchsia-500 to-pink-500
+                bg-gradient-to-r from-transparent via-purple-500 to-purple-500
                 group-hover:w-1/2
                 transition-all duration-700 ease-out
               "/>
