@@ -5,6 +5,7 @@ import React from 'react';
 import Image from 'next/image';
 import { useTheme } from 'next-themes';
 import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 
 const Sidebar: React.FC = () => {
   const { theme, setTheme } = useTheme();
@@ -44,7 +45,7 @@ const Sidebar: React.FC = () => {
 
             return (
               <li key={item.href}>
-                <a
+                <Link
                   href={item.href}
                   className={`
                     group relative block px-4 py-3 text-sm font-medium
@@ -80,13 +81,12 @@ const Sidebar: React.FC = () => {
                     </span>
                   )}
 
-                  {/* Content */}
                   <span className="relative z-10">
                     {item.label}
                   </span>
 
                  
-                </a>
+                </Link>
               </li>
             );
           })}
