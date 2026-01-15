@@ -46,7 +46,7 @@ export default function Hero() {
             </Link>
 
             <Link
-              href="#contact"
+              href="/contact"
               className="px-8 py-4 border border-slate-600 hover:border-purple-500 text-slate-300 hover:text-purple-300 rounded-full font-medium transition-all"
             >
               Let's Connect
