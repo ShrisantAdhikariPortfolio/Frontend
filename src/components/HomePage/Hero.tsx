@@ -12,14 +12,14 @@ export default function Hero() {
             FULL-STACK DEVELOPER
           </p>
 
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6 light:text-black/60">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6 text-slate-900 dark:text-white">
             Shrisant
-            <span className="text-purple-400">
+            <span className="text-purple-600 dark:text-purple-400">
               {' '}Adhikari
             </span>
           </h1>
 
-          <div className="text-xl md:text-2xl text-slate-300 light:text-black mb-10 min-h-[3.5rem]">
+          <div className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 mb-10 min-h-[3.5rem]">
             <TypeAnimation
               sequence={[
                 'Building modern web experiences',
@@ -40,14 +40,14 @@ export default function Hero() {
           <div className="flex flex-wrap gap-5">
             <Link
               href="#projects"
-              className="px-8 py-4 bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-blue-700 text-white font-medium rounded-full transition-all hover:scale-[1.03]"
+              className="px-8 py-4 bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-blue-700 text-white font-medium rounded-full transition-all hover:scale-[1.03] shadow-md shadow-purple-500/20"
             >
               Explore My Work →
             </Link>
 
             <Link
               href="/contact"
-              className="px-8 py-4 border border-slate-600 hover:border-purple-500 text-slate-300 hover:text-purple-300 rounded-full font-medium transition-all"
+              className="px-8 py-4 border border-slate-300 dark:border-slate-600 hover:border-purple-500 text-slate-700 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-300 rounded-full font-medium transition-all bg-white/60 dark:bg-transparent backdrop-blur-sm shadow-sm dark:shadow-none"
             >
               Let's Connect
             </Link>

@@ -4,7 +4,7 @@ import QuickStats from '@/components/HomePage/QuickStats'
 
 export default function Home() {
   return (
-    <main className="text-slate-100 min-h-screen">
+    <main className="text-foreground min-h-screen">
       <Hero />
 
       <QuickStats />

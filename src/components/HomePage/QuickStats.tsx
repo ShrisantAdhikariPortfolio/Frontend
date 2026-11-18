@@ -7,7 +7,7 @@ export default function QuickStats() {
   ]
 
   return (
-    <section className="py-16 md:py-24 border-t border-slate-800">
+    <section className="py-16 md:py-24 border-t border-slate-200 dark:border-slate-800">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center">
           {stats.map((stat, i) => (
@@ -15,7 +15,7 @@ export default function QuickStats() {
               <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-400 to-purple-500 bg-clip-text text-transparent mb-3 group-hover:scale-105 transition-transform">
                 {stat.value}
               </div>
-              <p className="text-slate-400 font-medium">{stat.label}</p>
+              <p className="text-slate-600 dark:text-slate-400 font-medium">{stat.label}</p>
             </div>
           ))}
         </div>

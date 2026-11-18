@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} antialiased`}>
+      <body className={`${inter.className} antialiased bg-background text-foreground min-h-screen transition-colors duration-300`}>
         <TopLoader
           color="#9333EA"
           initialPosition={0.08}
@@ -36,10 +36,10 @@ export default function RootLayout({
         <ThemeProvider
           attribute="data-theme"
           defaultTheme="dark"
-          themes={['light', 'dark']}
+          themes={['light', 'dark', 'high-contrast']}
           enableSystem={false}
         >
-          <div className="flex flex-col md:flex-row min-h-screen">
+          <div className="flex flex-col md:flex-row min-h-screen bg-background text-foreground">
             <Sidebar />
             <main className="w-full md:ml-64 p-4 md:p-8 transition-all duration-300">
               {children}

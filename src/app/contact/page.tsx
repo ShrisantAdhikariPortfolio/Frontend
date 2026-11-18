@@ -49,14 +49,14 @@ export default function Contact() {
   ];
 
   return (
-    <section className="min-h-screen py-20 px-6 md:px-12 bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 flex items-center">
+    <section className="min-h-screen py-20 px-6 md:px-12 text-foreground flex items-center">
       <div className="max-w-5xl mx-auto w-full">
         <div className="text-center space-y-6 md:space-y-8">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
             Let's <span className="text-purple-600 dark:text-purple-400">Connect</span>
           </h2>
 
-          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-slate-600 dark:text-gray-400 max-w-2xl mx-auto">
             Got a project in mind? Want to collaborate? Or just want to say hi?  
             I'm just one message away
           </p>
@@ -64,15 +64,17 @@ export default function Contact() {
           <div className="
             relative mt-10 md:mt-14
             inline-block mx-auto
-            bg-gradient-to-br from-gray-50/70 to-gray-100/50 
+            bg-white/80
+            dark:bg-gradient-to-br
             dark:from-gray-900/70 dark:to-gray-800/50
             backdrop-blur-sm
-            border border-gray-200/70 dark:border-gray-800/60
-            
+            border border-slate-200 dark:border-gray-800/60
+            rounded-2xl
+            shadow-xl shadow-slate-200/50 dark:shadow-none
             overflow-hidden
             group
             transition-all duration-500
-            hover:scale-[1.015] hover:shadow-purple-950/30
+            hover:scale-[1.015] hover:shadow-purple-500/10 dark:hover:shadow-purple-950/30
           ">
             <div className="absolute bottom-0 left-0 right-0 h-[3px] overflow-hidden pointer-events-none">
               <div className="

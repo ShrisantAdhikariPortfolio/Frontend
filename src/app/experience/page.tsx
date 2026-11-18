@@ -62,11 +62,11 @@ export default function Experience() {
                             Professional Experience
                         </span>
                     </h2>
-                    <p className="mt-6 text-xl text-slate-300 light:text-black max-w-3xl mx-auto">
+                    <p className="mt-6 text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
                         From internship to full-time roles — building real-world products,
                         collaborating in teams, and delivering production-grade applications.
                     </p>
-                    <p className="mt-4 text-lg text-purple-400/80 font-medium">
+                    <p className="mt-4 text-lg text-purple-600 dark:text-purple-400 font-medium">
                         Journey so far • January 2026
                     </p>
                 </div>
@@ -81,8 +81,8 @@ export default function Experience() {
                                 className={`relative opacity-0 translate-y-12 transition-all duration-700 ease-out
                            ${index % 2 === 0 ? 'md:ml-auto md:pl-12 md:pr-24' : 'md:mr-auto md:pr-12 md:pl-24'}`}
                             >
-                                <div className="bg-slate-900/50 backdrop-blur-xl border border-slate-700/60 p-8 md:p-10
-                                hover:border-purple-500/40
+                                <div className="bg-white/80 dark:bg-slate-900/50 backdrop-blur-xl border border-slate-200 dark:border-slate-700/60 rounded-2xl shadow-xl shadow-slate-200/50 dark:shadow-none p-8 md:p-10
+                                hover:border-purple-500/50
                                 transition-all duration-500 group relative overflow-hidden">
 
                                     <div
@@ -92,24 +92,24 @@ export default function Experience() {
 
                                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-6">
                                         <div>
-                                            <h3 className="text-3xl font-bold text-white group-hover:text-purple-300 transition-colors">
+                                            <h3 className="text-3xl font-bold text-slate-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-300 transition-colors">
                                                 {exp.role}
                                             </h3>
-                                            <p className="text-xl text-purple-400 light:text-black/70 mt-1.5">
+                                            <p className="text-xl text-purple-600 dark:text-purple-400 mt-1.5 font-medium">
                                                 {exp.company}
                                             </p>
                                         </div>
                                         <div className="text-right">
-                                            <p className="text-lg font-medium text-slate-300">
+                                            <p className="text-lg font-medium text-slate-700 dark:text-slate-300">
                                                 {exp.period}
                                             </p>
-                                            <p className="text-sm text-slate-500 mt-1">
+                                            <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
                                                 {exp.location}
                                             </p>
                                         </div>
                                     </div>
 
-                                    <ul className="space-y-3 text-slate-300">
+                                    <ul className="space-y-3 text-slate-600 dark:text-slate-300">
                                         {exp.highlights.map((point, i) => (
                                             <li key={i} className="flex items-start gap-3">
                                                 <span className="mt-1.5 h-2 w-2 rounded-full bg-purple-400 flex-shrink-0" />
@@ -121,19 +121,19 @@ export default function Experience() {
                                     <div className="absolute inset-0 opacity-0 group-hover:opacity-30 pointer-events-none transition-opacity duration-500 bg-gradient-to-br from-purple-500/10 via-transparent to-purple-500/5" />
                                 </div>
 
-                                <div className="hidden md:block absolute top-1/2 -translate-y-1/2 w-5 h-5 rounded-full bg-purple-500 border-4 border-slate-950 left-1/2 -translate-x-1/2" />
+                                <div className="hidden md:block absolute top-1/2 -translate-y-1/2 w-5 h-5 rounded-full bg-purple-500 border-4 border-white dark:border-slate-950 shadow-md left-1/2 -translate-x-1/2" />
                             </div>
                         ))}
                     </div>
                 </div>
 
                 <div className="mt-24 text-center">
-                    <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+                    <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
                         Each role has been a stepping stone — turning academic knowledge into production code,
                         learning team dynamics, and shipping features that real users interact with.
                     </p>
 
-                    <p className="mt-6 text-lg text-slate-500 italic">
+                    <p className="mt-6 text-lg text-slate-500 dark:text-slate-400 italic">
                         "The best way to predict the future is to create it." — through code & collaboration
                     </p>
                 </div>

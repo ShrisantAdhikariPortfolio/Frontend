@@ -1,7 +1,7 @@
 
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { useTheme } from 'next-themes';
 import { usePathname } from 'next/navigation';
@@ -10,8 +10,13 @@ import { Menu, X } from 'lucide-react';
 
 const Sidebar: React.FC = () => {
   const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const navItems = [
     { label: 'Home', href: '/' },
@@ -25,7 +30,6 @@ const Sidebar: React.FC = () => {
 
   return (
     <>
-      {/* Mobile Toggle Button */}
       <button
         className="md:hidden fixed top-4 left-4 z-50 p-2 rounded-md bg-purple-600 text-white"
         onClick={() => setIsOpen(!isOpen)}
@@ -33,7 +37,6 @@ const Sidebar: React.FC = () => {
         {isOpen ? <X size={20} /> : <Menu size={20} />}
       </button>
 
-      {/* Sidebar */}
       <aside
         className={`
           fixed top-0 left-0 h-screen w-64 bg-background text-foreground border-r border-border p-6 flex flex-col justify-between transition-transform duration-300 z-40
@@ -74,7 +77,7 @@ const Sidebar: React.FC = () => {
                         : 'text-foreground/80 hover:text-foreground'
                       }
                     `}
-                    onClick={() => setIsOpen(false)} // close sidebar on mobile after click
+                    onClick={() => setIsOpen(false)}
                   >
                     <span className="relative z-10">{item.label}</span>
                   </Link>
@@ -89,13 +92,13 @@ const Sidebar: React.FC = () => {
             Theme
           </label>
           <select
-            value={theme}
+            value={mounted ? theme : 'dark'}
             onChange={(e) => setTheme(e.target.value)}
             className="
               w-full bg-background/80 text-foreground 
               border border-border rounded-lg px-3 py-2.5 text-sm
               focus:outline-none focus:ring-2 focus:ring-purple-500/40
-              transition-all duration-200
+              transition-all duration-200 cursor-pointer
             "
           >
             <option value="light">Light</option>
