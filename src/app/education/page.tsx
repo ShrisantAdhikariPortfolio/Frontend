@@ -1,7 +1,32 @@
-'use client'
+'use client';
+
 import React, { useEffect, useRef } from 'react';
+import { useEducation } from '@/hooks/usePortfolioData';
+import { EducationData } from '@/types/portfolio';
+
+const fallbackEducation: EducationData = {
+  subheading: 'Pursuing excellence through continuous learning • January 2026',
+  items: [
+    {
+      id: 'bit',
+      degree: "Bachelor's in Information Technology",
+      major: 'Major in Computer Science • 5th Semester (Ongoing)',
+      period: 'October 2023 – Present',
+      institution: 'Mahendra Multiple Campus',
+      location: 'Ghorahi, Dang, Nepal',
+      description:
+        'Focused on core concepts in software engineering, data structures, algorithms, web technologies, and database systems. Actively applying coursework to real-world projects in full-stack development and AI tooling.',
+    },
+  ],
+  philosophy: {
+    quote:
+      'Education is not just about acquiring knowledge, but igniting a passion for innovation and problem-solving in the ever-evolving world of technology.',
+    author: 'Shrisant Adhikari',
+  },
+};
 
 export default function Education() {
+  const { data: eduData } = useEducation(fallbackEducation);
   const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -23,12 +48,15 @@ export default function Education() {
     }
 
     return () => observer.disconnect();
-  }, []);
+  }, [eduData]);
+
+  const items = eduData.items && eduData.items.length > 0 ? eduData.items : fallbackEducation.items;
+  const philosophy = eduData.philosophy || fallbackEducation.philosophy;
+  const subheading = eduData.subheading || fallbackEducation.subheading;
 
   return (
     <section className="py-24 relative overflow-hidden">
-      <div className="absolute inset-0 opacity-[0.07] pointer-events-none">
-      </div>
+      <div className="absolute inset-0 opacity-[0.07] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
@@ -39,53 +67,64 @@ export default function Education() {
           </h2>
 
           <p className="mt-6 text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            Building a strong foundation in computer science and information technology, 
+            Building a strong foundation in computer science and information technology,
             blending theoretical knowledge with practical application in full-stack development.
           </p>
 
           <p className="mt-3 text-lg text-purple-600 dark:text-purple-400 font-medium">
-            Pursuing excellence through continuous learning • January 2026
+            {subheading}
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div 
-            ref={cardRef}
-            className="relative bg-white/80 dark:bg-slate-900/40 backdrop-blur-xl border border-slate-200 dark:border-slate-700/50 rounded-2xl shadow-xl shadow-slate-200/50 dark:shadow-none p-8 lg:p-10
-                       hover:border-purple-500/50 transition-all duration-500 group
-                       opacity-0 translate-y-10"
-          >
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
-              <div>
-                <h3 className="text-3xl font-bold text-slate-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-300 transition-colors">
-                  Bachelor&apos;s in Information Technology
-                </h3>
-                <p className="text-xl text-purple-600 dark:text-purple-400 mt-1 font-medium">
-                  Major in Computer Science • 5th Semester (Ongoing)
-                </p>
+          {items.map((item, idx) => (
+            <div
+              key={item.id || idx}
+              ref={idx === 0 ? cardRef : undefined}
+              className="relative bg-white/80 dark:bg-slate-900/40 backdrop-blur-xl border border-slate-200 dark:border-slate-700/50 rounded-2xl shadow-xl shadow-slate-200/50 dark:shadow-none p-8 lg:p-10
+                         hover:border-purple-500/50 transition-all duration-500 group
+                         opacity-0 translate-y-10"
+            >
+              <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+                <div>
+                  <h3 className="text-3xl font-bold text-slate-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-300 transition-colors">
+                    {item.degree}
+                  </h3>
+                  {item.major && (
+                    <p className="text-xl text-purple-600 dark:text-purple-400 mt-1 font-medium">
+                      {item.major}
+                    </p>
+                  )}
+                </div>
+                {item.period && (
+                  <span className="text-lg text-slate-500 dark:text-slate-400 mt-4 md:mt-0 font-medium">
+                    {item.period}
+                  </span>
+                )}
               </div>
-              <span className="text-lg text-slate-500 dark:text-slate-400 mt-4 md:mt-0 font-medium">
-                October 2023 – Present
-              </span>
-            </div>
 
-            <div className="mb-6">
-              <h4 className="text-2xl font-semibold text-slate-800 dark:text-slate-200 mb-2">
-                Mahendra Multiple Campus
-              </h4>
-              <p className="text-lg text-slate-600 dark:text-slate-300">
-                Ghorahi, Dang, Nepal
+              {(item.institution || item.location) && (
+                <div className="mb-6">
+                  {item.institution && (
+                    <h4 className="text-2xl font-semibold text-slate-800 dark:text-slate-200 mb-2">
+                      {item.institution}
+                    </h4>
+                  )}
+                  {item.location && (
+                    <p className="text-lg text-slate-600 dark:text-slate-300">
+                      {item.location}
+                    </p>
+                  )}
+                </div>
+              )}
+
+              <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+                {item.description}
               </p>
+
+              <div className="absolute -inset-px rounded-xl opacity-0 group-hover:opacity-30 pointer-events-none transition-opacity duration-500 bg-gradient-to-r from-transparent via-purple-500/10 to-transparent blur-xl" />
             </div>
-
-            <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-              Focused on core concepts in software engineering, data structures, algorithms, 
-              web technologies, and database systems. Actively applying coursework to real-world 
-              projects in full-stack development and AI tooling.
-            </p>
-
-            <div className="absolute -inset-px rounded-xl opacity-0 group-hover:opacity-30 pointer-events-none transition-opacity duration-500 bg-gradient-to-r from-transparent via-purple-500/10 to-transparent blur-xl" />
-          </div>
+          ))}
 
           <div className="relative bg-white/80 dark:bg-slate-900/40 backdrop-blur-xl border border-slate-200 dark:border-slate-700/50 rounded-2xl shadow-xl shadow-slate-200/50 dark:shadow-none p-8 lg:p-10
                           hover:border-purple-500/50 transition-all duration-500 group">
@@ -94,11 +133,10 @@ export default function Education() {
                 Learning Philosophy
               </h3>
               <blockquote className="text-xl italic text-slate-700 dark:text-slate-200 leading-relaxed border-l-4 border-purple-500 pl-6">
-                &quot;Education is not just about acquiring knowledge, but igniting a passion 
-                for innovation and problem-solving in the ever-evolving world of technology.&quot;
+                &quot;{philosophy.quote}&quot;
               </blockquote>
               <p className="mt-6 text-lg text-purple-600 dark:text-purple-400 font-medium">
-                - Shrisant Adhikari
+                - {philosophy.author}
               </p>
             </div>
 
@@ -108,7 +146,7 @@ export default function Education() {
 
         <div className="mt-20 text-center">
           <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-            This academic path fuels my professional growth, bridging theory with hands-on 
+            This academic path fuels my professional growth, bridging theory with hands-on
             projects in MERN stack, cloud infrastructure, and beyond.
           </p>
 

@@ -1,0 +1,15 @@
+{
+  "badge": "FULL-STACK DEVELOPER",
+  "name": "Shrisant",
+  "lastName": "Adhikari",
+  "typewriterLines": [
+    "Building modern web experiences",
+    "MERN & Next.js Specialist",
+    "Crafting scalable full-stack solutions",
+    "Currently @ SB Global"
+  ],
+  "ctaText": "Explore My Work →",
+  "ctaLink": "#projects",
+  "secondaryCtaText": "Let's Connect",
+  "secondaryCtaLink": "/contact"
+}

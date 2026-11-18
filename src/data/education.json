@@ -1,0 +1,18 @@
+{
+  "subheading": "Pursuing excellence through continuous learning • January 2026",
+  "items": [
+    {
+      "id": "bit",
+      "degree": "Bachelor's in Information Technology",
+      "major": "Major in Computer Science • 5th Semester (Ongoing)",
+      "period": "October 2023 – Present",
+      "institution": "Mahendra Multiple Campus",
+      "location": "Ghorahi, Dang, Nepal",
+      "description": "Focused on core concepts in software engineering, data structures, algorithms, web technologies, and database systems. Actively applying coursework to real-world projects in full-stack development and AI tooling."
+    }
+  ],
+  "philosophy": {
+    "quote": "Education is not just about acquiring knowledge, but igniting a passion for innovation and problem-solving in the ever-evolving world of technology.",
+    "author": "Shrisant Adhikari"
+  }
+}

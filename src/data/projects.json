@@ -1,0 +1,57 @@
+[
+  {
+    "id": "kbc",
+    "title": "Kathmandu Business Campus",
+    "description": "A fully functional educational platform designed for campus administration, student access, course management, and information sharing.",
+    "link": "http://kathmandubusinesscampus.edu.np/",
+    "github": "",
+    "image": "/kbc.png",
+    "tags": ["Next.js", "Tailwind CSS", "Node.js", "MongoDB"],
+    "color": "#00D4FF",
+    "featured": true
+  },
+  {
+    "id": "sbglobal",
+    "title": "SB Global Venture",
+    "description": "Modern company website for a leading IT services provider in Nepal with seamless frontend-backend integration and professional design.",
+    "link": "https://sbglobalventure.com/",
+    "github": "",
+    "image": "/sbglobal.png",
+    "tags": ["React", "Next.js", "Express", "MongoDB"],
+    "color": "#7C3AED",
+    "featured": true
+  },
+  {
+    "id": "dragon",
+    "title": "Dragon Charter Services",
+    "description": "Service-oriented website developed for a charter & logistics company, focusing on clean UI, responsiveness, and reliable performance.",
+    "link": "https://dragoncharterservices.com/",
+    "github": "",
+    "image": "/dragon.png",
+    "tags": ["Next.js", "Tailwind", "Node.js"],
+    "color": "#FF6B6B",
+    "featured": true
+  },
+  {
+    "id": "internnepal",
+    "title": "Intern Nepal",
+    "description": "Intern Nepal is more than just internships — it's where students, fresh grads, and companies come together to learn, connect, and build the future. Find opportunities, attend events, join communities, and grow your career with purpose.",
+    "link": "https://internepal.com.np/",
+    "github": "",
+    "image": "/intern-nepal.png",
+    "tags": ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
+    "color": "#00FFA3",
+    "featured": true
+  },
+  {
+    "id": "trekking",
+    "title": "Trekking Exploration",
+    "description": "Modern web application for Trekking, adventure bookings, itinerary planning, and customer experience in Nepal's tourism sector.",
+    "link": "https://trekking-exploration.vercel.app/",
+    "github": "",
+    "image": "/trekking.png",
+    "tags": ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
+    "color": "#00FFA3",
+    "featured": true
+  }
+]
