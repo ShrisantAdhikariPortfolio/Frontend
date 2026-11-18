@@ -14,7 +14,7 @@ const fallbackHero: HeroData = {
     'Building modern web experiences',
     'MERN & Next.js Specialist',
     'Crafting scalable full-stack solutions',
-    'Currently @ SB Global',
+    'Currently at SB Global',
   ],
   ctaText: 'Explore My Work →',
   ctaLink: '#projects',
