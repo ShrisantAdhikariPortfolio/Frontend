@@ -1,0 +1,29 @@
+[
+  {
+    "id": "sb-global",
+    "role": "Fullstack Developer",
+    "company": "SB Global",
+    "location": "Kathmandu - Paknajol",
+    "period": "October 2025 – Present",
+    "highlights": [
+      "Developed and deployed SBGlobalVenture.com",
+      "Contributed to DragonCharterServices.com",
+      "Built Trekking Exploration web app: https://trekking-exploration.vercel.app/",
+      "Collaborated in team-based projects focusing on frontend/backend integration"
+    ],
+    "color": "#00D4FF"
+  },
+  {
+    "id": "mindrisers",
+    "role": "MERN Developer",
+    "company": "Mindrisers",
+    "location": "Kathmandu - Putalisadak",
+    "period": "October 2024 – October 2025",
+    "highlights": [
+      "Contributed to internnepal.com project",
+      "Gained hands-on experience in web development, project deployment & team collaboration",
+      "Learned and applied modern fullstack development technologies"
+    ],
+    "color": "#7C3AED"
+  }
+]

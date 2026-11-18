@@ -1,0 +1,50 @@
+{
+  "title": "Let's",
+  "titleHighlight": "Connect",
+  "description": "Got a project in mind? Want to collaborate? Or just want to say hi? I'm just one message away",
+  "footerNote": "Currently open for freelance & interesting opportunities\n(React • Next.js • TypeScript • UI/UX)",
+  "socialLinks": [
+    {
+      "id": "1",
+      "name": "GitHub",
+      "icon": "Github",
+      "href": "https://github.com/shreesantgithuber?tab=repositories",
+      "color": "hover:text-gray-100"
+    },
+    {
+      "id": "2",
+      "name": "LinkedIn",
+      "icon": "Linkedin",
+      "href": "https://np.linkedin.com/in/shreesant-adhikari-bb667322b",
+      "color": "hover:text-blue-400"
+    },
+    {
+      "id": "3",
+      "name": "Twitter / X",
+      "icon": "Twitter",
+      "href": "https://x.com/ShreesantAdhik2",
+      "color": "hover:text-sky-400"
+    },
+    {
+      "id": "4",
+      "name": "Instagram",
+      "icon": "Instagram",
+      "href": "https://www.instagram.com/css_loverss/?igsh=MWYybnVqanQzM2ptYQ%3D%3D#",
+      "color": "hover:text-pink-500"
+    },
+    {
+      "id": "5",
+      "name": "Email",
+      "icon": "Mail",
+      "href": "mailto:shreesantadhikari4590@gmail.com",
+      "color": "hover:text-purple-400"
+    },
+    {
+      "id": "6",
+      "name": "Website",
+      "icon": "Globe",
+      "href": "https://shrisant-academy-frontend.vercel.app/",
+      "color": "hover:text-emerald-400"
+    }
+  ]
+}

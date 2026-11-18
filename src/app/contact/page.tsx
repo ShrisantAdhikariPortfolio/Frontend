@@ -1,67 +1,110 @@
+'use client';
+
 import React from 'react';
-import { 
-  Github, 
-  Linkedin, 
-  Twitter, 
-  Instagram, 
-  Mail, 
-  Globe 
+import {
+  Github,
+  Linkedin,
+  Twitter,
+  Instagram,
+  Mail,
+  Globe,
+  LucideIcon,
 } from 'lucide-react';
+import { useContact } from '@/hooks/usePortfolioData';
+import { ContactData } from '@/types/portfolio';
+
+const fallbackContact: ContactData = {
+  title: "Let's",
+  titleHighlight: 'Connect',
+  description:
+    "Got a project in mind? Want to collaborate? Or just want to say hi? I'm just one message away",
+  footerNote:
+    'Currently open for freelance & interesting opportunities\n(React • Next.js • TypeScript • UI/UX)',
+  socialLinks: [
+    {
+      id: '1',
+      name: 'GitHub',
+      icon: 'Github',
+      href: 'https://github.com/shreesantgithuber?tab=repositories',
+      color: 'hover:text-gray-100',
+    },
+    {
+      id: '2',
+      name: 'LinkedIn',
+      icon: 'Linkedin',
+      href: 'https://np.linkedin.com/in/shreesant-adhikari-bb667322b',
+      color: 'hover:text-blue-400',
+    },
+    {
+      id: '3',
+      name: 'Twitter / X',
+      icon: 'Twitter',
+      href: 'https://x.com/ShreesantAdhik2',
+      color: 'hover:text-sky-400',
+    },
+    {
+      id: '4',
+      name: 'Instagram',
+      icon: 'Instagram',
+      href: 'https://www.instagram.com/css_loverss/?igsh=MWYybnVqanQzM2ptYQ%3D%3D#',
+      color: 'hover:text-pink-500',
+    },
+    {
+      id: '5',
+      name: 'Email',
+      icon: 'Mail',
+      href: 'mailto:shreesantadhikari4590@gmail.com',
+      color: 'hover:text-purple-400',
+    },
+    {
+      id: '6',
+      name: 'Website',
+      icon: 'Globe',
+      href: 'https://shrisant-academy-frontend.vercel.app/',
+      color: 'hover:text-emerald-400',
+    },
+  ],
+};
+
+const iconMap: Record<string, LucideIcon> = {
+  github: Github,
+  linkedin: Linkedin,
+  twitter: Twitter,
+  instagram: Instagram,
+  mail: Mail,
+  globe: Globe,
+};
 
 export default function Contact() {
-  const socialLinks = [
-    { 
-      name: 'GitHub', 
-      icon: Github, 
-      href: 'https://github.com/shreesantgithuber?tab=repositories', 
-      color: 'hover:text-gray-100' 
-    },
-    { 
-      name: 'LinkedIn', 
-      icon: Linkedin, 
-      href: 'https://np.linkedin.com/in/shreesant-adhikari-bb667322b', 
-      color: 'hover:text-blue-400' 
-    },
-    { 
-      name: 'Twitter / X', 
-      icon: Twitter, 
-      href: 'https://x.com/ShreesantAdhik2', 
-      color: 'hover:text-sky-400' 
-    },
-    { 
-      name: 'Instagram', 
-      icon: Instagram, 
-      href: 'https://www.instagram.com/css_loverss/?igsh=MWYybnVqanQzM2ptYQ%3D%3D#', 
-      color: 'hover:text-pink-500' 
-    },
-    { 
-      name: 'Email', 
-      icon: Mail, 
-      href: 'mailto:shreesantadhikari4590@gmail.com', 
-      color: 'hover:text-purple-400' 
-    },
-    { 
-      name: 'Website', 
-      icon: Globe, 
-      href: 'https://shrisant-academy-frontend.vercel.app/', 
-      color: 'hover:text-emerald-400' 
-    },
-  ];
+  const { data: contact } = useContact(fallbackContact);
+
+  const title = contact.title || fallbackContact.title;
+  const titleHighlight =
+    contact.titleHighlight || fallbackContact.titleHighlight;
+  const description = contact.description || fallbackContact.description;
+  const footerNote = contact.footerNote || fallbackContact.footerNote;
+  const socialLinks =
+    contact.socialLinks && contact.socialLinks.length > 0
+      ? contact.socialLinks
+      : fallbackContact.socialLinks;
 
   return (
     <section className="min-h-screen py-20 px-6 md:px-12 text-foreground flex items-center">
       <div className="max-w-5xl mx-auto w-full">
         <div className="text-center space-y-6 md:space-y-8">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-            Let's <span className="text-purple-600 dark:text-purple-400">Connect</span>
+            {title}{' '}
+            <span className="text-purple-600 dark:text-purple-400">
+              {titleHighlight}
+            </span>
           </h2>
 
           <p className="text-lg md:text-xl text-slate-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Got a project in mind? Want to collaborate? Or just want to say hi?  
-            I'm just one message away
+            {description}
           </p>
 
-          <div className="
+          <div
+            className="
             relative mt-10 md:mt-14
             inline-block mx-auto
             bg-white/80
@@ -75,76 +118,94 @@ export default function Contact() {
             group
             transition-all duration-500
             hover:scale-[1.015] hover:shadow-purple-500/10 dark:hover:shadow-purple-950/30
-          ">
+          "
+          >
             <div className="absolute bottom-0 left-0 right-0 h-[3px] overflow-hidden pointer-events-none">
-              <div className="
+              <div
+                className="
                 absolute bottom-0 left-0 h-full 
                 w-0 origin-left
                 bg-gradient-to-r from-green-200 to-green-400
                 group-hover:w-1/2
                 transition-all duration-700 ease-out
-              "/>
+              "
+              />
 
-              <div className="
+              <div
+                className="
                 absolute bottom-0 right-0 h-full 
                 w-0 origin-right
                 bg-gradient-to-r from-transparent via-purple-500 to-purple-500
                 group-hover:w-1/2
                 transition-all duration-700 ease-out
-              "/>
+              "
+              />
 
-              <div className="
+              <div
+                className="
                 absolute bottom-0 left-0 h-full 
                 w-0 origin-left blur-md
                 bg-gradient-to-r from-purple-400/60 via-fuchsia-400/50 to-transparent
                 group-hover:w-1/2
                 transition-all duration-800 ease-out
-              "/>
+              "
+              />
 
-              <div className="
+              <div
+                className="
                 absolute bottom-0 right-0 h-full 
                 w-0 origin-right blur-md
                 bg-gradient-to-r from-transparent via-fuchsia-400/50 to-pink-400/60
                 group-hover:w-1/2
                 transition-all duration-800 ease-out
-              "/>
+              "
+              />
             </div>
 
             <div className="p-8 md:p-14">
               <div className="inline-flex flex-wrap justify-center gap-6 md:gap-12">
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.name}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={social.name}
-                    className={`
+                {socialLinks.map((social) => {
+                  const Icon =
+                    iconMap[social.icon?.toLowerCase()] ||
+                    iconMap[social.name?.toLowerCase().replace(/[^a-z]/g, '')] ||
+                    Globe;
+
+                  return (
+                    <a
+                      key={social.id || social.name}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={social.name}
+                      className={`
                       group/icon relative p-5 md:p-6
                       rounded-2xl
                       transition-all duration-300
                       hover:scale-110 hover:-translate-y-1.5
                       active:scale-95
                     `}
-                  >
-                    <div className="
+                    >
+                      <div
+                        className="
                       absolute inset-0 rounded-2xl 
                       bg-gradient-to-br from-purple-500/10 to-pink-500/5 
                       opacity-0 group-hover/icon:opacity-100 
                       transition-opacity duration-300
-                    "/>
+                    "
+                      />
 
-                    <social.icon 
-                      size={44} 
-                      strokeWidth={1.6}
-                      className={`
+                      <Icon
+                        size={44}
+                        strokeWidth={1.6}
+                        className={`
                         relative text-gray-700 dark:text-gray-300 
-                        ${social.color}
+                        ${social.color || 'hover:text-purple-400'}
                         transition-colors duration-300
                       `}
-                    />
+                      />
 
-                    <span className="
+                      <span
+                        className="
                       absolute -bottom-12 left-1/2 -translate-x-1/2 
                       text-sm font-medium px-4 py-2 rounded-lg
                       bg-gray-900/95 text-white
@@ -152,19 +213,22 @@ export default function Contact() {
                       transition-all duration-300 scale-95 group-hover/icon:scale-100
                       pointer-events-none whitespace-nowrap
                       border border-gray-700/50 shadow-lg
-                    ">
-                      {social.name}
-                    </span>
-                  </a>
-                ))}
+                    "
+                      >
+                        {social.name}
+                      </span>
+                    </a>
+                  );
+                })}
               </div>
             </div>
           </div>
 
-          <p className="text-gray-500 dark:text-gray-500 text-sm md:text-base pt-10">
-            Currently open for freelance & interesting opportunities<br />
-            (React • Next.js • TypeScript • UI/UX)
-          </p>
+          {footerNote && (
+            <p className="text-gray-500 dark:text-gray-500 text-sm md:text-base pt-10 whitespace-pre-line">
+              {footerNote}
+            </p>
+          )}
         </div>
       </div>
     </section>

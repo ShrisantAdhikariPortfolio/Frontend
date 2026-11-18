@@ -1,0 +1,74 @@
+[
+  {
+    "id": "1",
+    "title": "A Blast from the Open Source Past: Ubucon 2025",
+    "slug": "ubucon-2025-nepal",
+    "category": "Open Source",
+    "date": "6mo ago",
+    "readTime": "8 min read",
+    "excerpt": "I wrote a blog post about my experience at Ubucon 2025 in Nepal, a major event for the open-source community. I had the opportunity to meet and talk with many interesting people...",
+    "tags": ["Ubuntu", "Conference", "Nepal"],
+    "content": "Full insights from attending Ubucon 2025 in Nepal, community building, and open source opportunities.",
+    "published": true
+  },
+  {
+    "id": "2",
+    "title": "Take your Django serializers to the next level",
+    "slug": "django-serializers-advanced",
+    "category": "Django",
+    "date": "5mo ago",
+    "readTime": "12 min read",
+    "excerpt": "Learn the essentials of Django REST Framework serializers — from basic Serializer vs ModelSerializer, methods, context, and custom fields, to practical examples...",
+    "tags": ["DRF", "Serializers", "REST API"],
+    "content": "Deep dive into optimizing serializers, nested writes, and high-performance serialization.",
+    "published": true
+  },
+  {
+    "id": "3",
+    "title": "Experiencing the dualities of hackathon",
+    "slug": "hackathon-dualities",
+    "category": "Hackathon",
+    "date": "1y ago",
+    "readTime": "7 min read",
+    "excerpt": "I reflected on my journey in hackathons, first as a participant and later as a judge. Experiencing the nerves, teamwork, and pressure firsthand...",
+    "tags": ["Teamwork", "Productivity", "Events"],
+    "content": "How participating in and judging hackathons shapes engineering mindset and rapid problem solving.",
+    "published": true
+  },
+  {
+    "id": "4",
+    "title": "TypeScript Advanced Tricks",
+    "slug": "typescript-advanced-tricks",
+    "category": "TypeScript",
+    "date": "1y ago",
+    "readTime": "6 min read",
+    "excerpt": "I revisited my previous JavaScript tips and shared five TypeScript tricks I use daily: checking literal types in IDEs, handling null safely...",
+    "tags": ["TypeScript", "Tips", "Advanced"],
+    "content": "Practical TypeScript patterns for enterprise grade codebases.",
+    "published": true
+  },
+  {
+    "id": "5",
+    "title": "From YING to YANG: Understanding Celery",
+    "slug": "understanding-celery",
+    "category": "Architecture",
+    "date": "1y ago",
+    "readTime": "10 min read",
+    "excerpt": "In this article, I explored Celery from basics to advanced usage—how it handles background tasks, concurrency, time limits...",
+    "tags": ["Celery", "Task Queue", "Python"],
+    "content": "Mastering background workers, queues, Redis/RabbitMQ brokers with Celery.",
+    "published": true
+  },
+  {
+    "id": "6",
+    "title": "I have been increasing my development productivity",
+    "slug": "dev-productivity-tips",
+    "category": "Productivity",
+    "date": "1y ago",
+    "readTime": "5 min read",
+    "excerpt": "Practical habits, tools, shortcuts, and mindset shifts that helped me ship faster and with less stress over the past year.",
+    "tags": ["Productivity", "Workflow", "Developer Life"],
+    "content": "Actionable developer habits for shipping faster and building better software.",
+    "published": true
+  }
+]

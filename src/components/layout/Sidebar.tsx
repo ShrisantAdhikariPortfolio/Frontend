@@ -23,8 +23,9 @@ const Sidebar: React.FC = () => {
     { label: 'Skills', href: '/skills' },
     { label: 'Education', href: '/education' },
     { label: 'Experience', href: '/experience' },
+    { label: 'Projects', href: '/projects' },
+    { label: 'Blog', href: '/blogs' },
     { label: 'Resume / CV', href: '/resume' },
-    { label: 'Blog', href: '#blog' },
     { label: 'Contact', href: '/contact' },
   ];
 
@@ -87,25 +88,35 @@ const Sidebar: React.FC = () => {
           </ul>
         </nav>
 
-        <div className="mt-8">
-          <label className="block text-xs mb-2 text-muted-foreground font-medium">
-            Theme
-          </label>
-          <select
-            value={mounted ? theme : 'dark'}
-            onChange={(e) => setTheme(e.target.value)}
-            className="
-              w-full bg-background/80 text-foreground 
-              border border-border rounded-lg px-3 py-2.5 text-sm
-              focus:outline-none focus:ring-2 focus:ring-purple-500/40
-              transition-all duration-200 cursor-pointer
-            "
+        <div className="mt-8 space-y-4">
+          <div>
+            <label className="block text-xs mb-2 text-muted-foreground font-medium">
+              Theme
+            </label>
+            <select
+              value={mounted ? theme : 'dark'}
+              onChange={(e) => setTheme(e.target.value)}
+              className="
+                w-full bg-background/80 text-foreground 
+                border border-border rounded-lg px-3 py-2.5 text-sm
+                focus:outline-none focus:ring-2 focus:ring-purple-500/40
+                transition-all duration-200 cursor-pointer
+              "
+            >
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+              <option value="high-contrast">High Contrast</option>
+              <option value="system">System</option>
+            </select>
+          </div>
+
+          <Link
+            href="/admin"
+            className="flex items-center justify-center gap-2 w-full py-2 px-3 text-xs text-muted-foreground hover:text-purple-400 border border-border/70 hover:border-purple-500/50 rounded-lg transition-colors"
           >
-            <option value="light">Light</option>
-            <option value="dark">Dark</option>
-            <option value="high-contrast">High Contrast</option>
-            <option value="system">System</option>
-          </select>
+            <span>Admin Panel</span>
+            <span>⚙️</span>
+          </Link>
         </div>
       </aside>
     </>
